@@ -112,6 +112,9 @@ img {
   min-width: 100%;
   position: absolute;
   z-index: -1;
+
+  opacity: 0;
+  transition: 0.3s ease-in-out;
 }
 
 .conteudo-principal .paineis .projeto1 {
@@ -125,6 +128,10 @@ img {
 .conteudo-principal .paineis .projeto3 {
   background-image: url('../images/painel3.jpg');
 }
+
+.conteudo-principal .paineis .imagem-painel.mostrar {
+  opacity: 1;
+} 
 
 .conteudo-principal .paineis .titulo {
   color: #fff;
