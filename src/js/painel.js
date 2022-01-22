@@ -11,6 +11,22 @@ const setaAvancar = document.getElementById('btn-avancar')
 const setaVoltar = document.getElementById('btn-voltar')
 let imagemAtual = 0
 
+function esconderImagens() {
+      /* -Esconder todas as imagens
+  -Pegar todas as imagens usando o DOM e remover a classe mostrar */
+
+  imagensPainel.forEach(imagem => {
+    imagem.classList.remove('mostrar')
+  });
+
+}
+
+function mostrarImagem() {
+      /*  - Mostrar a próxima imagem
+  -Pegar todas as imagens, descobrir qual é a próxima, e colocar a classe mostrar nela */
+
+  imagensPainel[imagemAtual].classList.add('mostrar');
+}
 /* -Assim que for clicado no avançar, adicionar + 1 ao contador de imagens pra saber que agora a segunda imagem será mostrada  */
 
 setaAvancar.addEventListener('click', () => {
@@ -25,17 +41,9 @@ setaAvancar.addEventListener('click', () => {
 
   imagemAtual++
 
-  /* -Esconder todas as imagens
--Pegar todas as imagens usando o DOM e remover a classe mostrar */
+  esconderImagens();
+  mostrarImagem();
 
-  imagensPainel.forEach(imagem => {
-    imagem.classList.remove('mostrar')
-  });
-
-  /*  - Mostrar a próxima imagem
--Pegar todas as imagens, descobrir qual é a próxima, e colocar a classe mostrar nela */
-
-  imagensPainel[imagemAtual].classList.add('mostrar');
 });
 
 setaVoltar.addEventListener('click', () => {
@@ -45,10 +53,6 @@ setaVoltar.addEventListener('click', () => {
 
   imagemAtual--;
 
-  imagensPainel.forEach(imagem => {
-    imagem.classList.remove('mostrar')
-  });
-
-  imagensPainel[imagemAtual].classList.add('mostrar');
-
+  esconderImagens();
+  mostrarImagem();
 });
